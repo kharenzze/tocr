@@ -1,6 +1,4 @@
 <script lang="ts">
-  import Greet from "./lib/Greet.svelte";
-
   const getDataUrl = async (file) => {
     const fReader = new FileReader();
     fReader.readAsDataURL(file);
@@ -23,7 +21,7 @@
   <input type="file" on:change={inputHandler} />
 
   <div class="row">
-    <Greet />
+    <p>Hi!</p>
   </div>
 </main>
 
