@@ -21,10 +21,20 @@
   <input type="file" on:change={inputHandler} />
 
   <div class="row">
-    <p>Hi!</p>
+    <div class="half">
+      <p>Hi!</p>
+    </div>
+    <div class="half">
+      <p>Hi!</p>
+    </div>
   </div>
 </main>
 
 <style>
+  .half {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
 </style>
 
