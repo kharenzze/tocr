@@ -1,4 +1,5 @@
 <script lang="ts">
+  let imageUrl = undefined;
   const getDataUrl = async (file) => {
     const fReader = new FileReader();
     fReader.readAsDataURL(file);
@@ -12,6 +13,7 @@
     const file = evt.target.files[0];
     const url = await getDataUrl(file);
     console.log(url);
+    imageUrl = url;
   };
 </script>
 
@@ -20,11 +22,12 @@
 
   <input type="file" on:change={inputHandler} />
 
-  <div class="row">
-    <div class="half">
+  <div class="row container">
+    <div class="col half">
       <p>Hi!</p>
+      <img class="preview" src={imageUrl} />
     </div>
-    <div class="half">
+    <div class="col half">
       <p>Hi!</p>
     </div>
   </div>
@@ -32,9 +35,14 @@
 
 <style>
   .half {
-    flex: 1;
+    flex: 0 0 1;
     display: flex;
     justify-content: center;
+    max-width: 50%;
+    box-sizing: border-box;
+  }
+
+  .preview {
+    object-fit: contain;
   }
 </style>
-
