@@ -23,6 +23,11 @@
   text-align: center;
 }
 
+main.container {
+  position: absolute;
+  inset: 0;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
