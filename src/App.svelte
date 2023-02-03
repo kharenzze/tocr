@@ -1,5 +1,8 @@
 <script lang="ts">
+  import { invoke } from "@tauri-apps/api/tauri";
+
   let imageUrl = undefined;
+  let text = "";
   const getDataUrl = async (file) => {
     const fReader = new FileReader();
     fReader.readAsDataURL(file);
@@ -14,6 +17,7 @@
     const url = await getDataUrl(file);
     console.log(url);
     imageUrl = url;
+    text = await invoke("process_image", { url });
   };
 </script>
 
@@ -25,10 +29,11 @@
   <div class="row container">
     <div class="col half">
       <p>Hi!</p>
-      <img class="preview" src={imageUrl} />
+      <img class="preview" src={imageUrl} alt="preview" />
     </div>
     <div class="col half">
       <p>Hi!</p>
+      <p>{text}</p>
     </div>
   </div>
 </main>

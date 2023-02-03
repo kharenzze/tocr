@@ -33,7 +33,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "tocr.kharenzze.com",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
