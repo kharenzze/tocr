@@ -28,11 +28,9 @@
 
   <div class="row container">
     <div class="col half">
-      <p>Hi!</p>
       <img class="preview" src={imageUrl} alt="preview" />
     </div>
     <div class="col half">
-      <p>Hi!</p>
       <p>{text}</p>
     </div>
   </div>
